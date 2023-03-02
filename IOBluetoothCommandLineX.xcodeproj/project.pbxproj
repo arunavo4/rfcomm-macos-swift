@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D645401829ADD56F00FC40DF /* CRC16.swift in Sources */ = {isa = PBXBuildFile; fileRef = D645401729ADD56F00FC40DF /* CRC16.swift */; };
 		D649DC122980074D00930234 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D649DC112980074D00930234 /* main.swift */; };
 		D6EC41E02980450C001224C8 /* NothingSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EC41DF2980450C001224C8 /* NothingSearcher.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D645401729ADD56F00FC40DF /* CRC16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRC16.swift; sourceTree = "<group>"; };
 		D649DC0E2980074D00930234 /* IOBluetoothCommandLineX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = IOBluetoothCommandLineX; sourceTree = BUILT_PRODUCTS_DIR; };
 		D649DC112980074D00930234 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D6EC41DF2980450C001224C8 /* NothingSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NothingSearcher.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			children = (
 				D649DC112980074D00930234 /* main.swift */,
 				D6EC41DF2980450C001224C8 /* NothingSearcher.swift */,
+				D645401729ADD56F00FC40DF /* CRC16.swift */,
 			);
 			path = IOBluetoothCommandLineX;
 			sourceTree = "<group>";
@@ -124,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6EC41E02980450C001224C8 /* NothingSearcher.swift in Sources */,
+				D645401829ADD56F00FC40DF /* CRC16.swift in Sources */,
 				D649DC122980074D00930234 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
