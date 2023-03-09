@@ -36,7 +36,7 @@ class BluetoothDevices: NSObject, IOBluetoothRFCOMMChannelDelegate {
         }
 
         // Open an RFCOMM channel to the device
-        let resultRFCOMM = device.openRFCOMMChannelSync(&channel, withChannelID: channelID, delegate: self)
+        let resultRFCOMM = device.openRFCOMMChannelSync(&channel, withChannelID: 15, delegate: self)
         if resultRFCOMM == kIOReturnSuccess {
             print("Opened RFCOMM channel")
             // Start sending commands
@@ -51,7 +51,7 @@ class BluetoothDevices: NSObject, IOBluetoothRFCOMMChannelDelegate {
         // Write data to the device
         let result = channel.writeSync(data, length: data_count)
         if result == kIOReturnSuccess {
-            print("Sent data")
+            print("Sent data \(result)")
         } else {
             print("Failed to send data")
         }
@@ -90,6 +90,14 @@ class BluetoothDevices: NSObject, IOBluetoothRFCOMMChannelDelegate {
     func rfcommChannelQueueSpaceAvailable(_ rfcommChannel: IOBluetoothRFCOMMChannel!)
     {
         print("rfcommChannelQueueSpaceAvailable")
+    }
+    
+    func rfcommChannelOpenComplete(_ rfcommChannel: IOBluetoothRFCOMMChannel!, status error: IOReturn) {
+        if(error != kIOReturnSuccess){
+            print("Error - Failed to open the RFCOMM channel");
+        } else {
+            print("Connected - rfcommChannelOpenComplete");
+        }
     }
     
   func pairedDevices() {
@@ -171,8 +179,8 @@ while true {
             print("Connected",ns.isConnected())
             
         case "3":
-//            bt.connectToDevice(address: "2c-be-eb-04-b4-25", channelID: Int(ns.getService().getRFCOMMChannelID(&channelID)))
-            bt.connectToDevice(address: "2c-be-eb-04-b4-25", channelID: 15)
+            bt.connectToDevice(address: "2c-be-eb-04-b4-25", channelID: UInt8(ns.getService().getRFCOMMChannelID(&channelID)))
+//            bt.connectToDevice(address: "2c-be-eb-04-b4-25", channelID: 15)
             
         case "4":
             bt.ringBuds(ring: true)
